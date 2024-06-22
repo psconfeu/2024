@@ -19,4 +19,4 @@ After completion of this session, you will be able to:
 
 ## Prerequisites and Setup Information
 
-All information for participating in this session can be found in [the session repository](https://github.com/Azure/arc_jumpstart_levelup/blob/psconfeu/docs/azure_arc_servers_jumpstart/_readme.md).
+All information for participating in this session can be found in [the session repository](https://aka.ms/arc-follow-along).
