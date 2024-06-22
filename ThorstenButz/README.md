@@ -7,8 +7,5 @@ But have a look inside the document, you should find a lot of things you can try
 A [Pecha Kucha](https://en.wikipedia.org/wiki/PechaKucha) is an entertaining storytelling format, in which 20 images/slides are shown for 20 seconds each. A Pecha Kucha presentation will therefore always last 6 min 40 sec (plus or minus a few seconds), this also applies to a PoshaKucha.
 
 
-
-
-
-![PoshaKucha_2194.jpg](D:\git\psconfeu\2024\ThorstenButz\PoShaKucha.webp)
+![PoshaKucha_2194.jpg](PoShaKucha.webp)
 
