@@ -25,15 +25,18 @@ To save you time, please deploy the hands-on environment before coming to the se
 
 1. Register the following resource providers on your subscription using either cloud shell or the portal.
 
-    ![Screenshot showing the resource provider registraion](./media/rp_registration.png)
+    - Option 1 : Using Azure Portal
+       ![Screenshot showing the resource provider registraion](./media/rp_registration.png)
 
-    ```shell
-  az provider register --namespace Microsoft.HybridCompute --wait
-  az provider register --namespace Microsoft.GuestConfiguration --wait
-  az provider register --namespace Microsoft.AzureArcData --wait
-  az provider register --namespace Microsoft.HybridConnectivity --wait
-  az provider register --namespace Microsoft.OperationsManagement --wait
-  az provider register --namespace Microsoft.SecurityInsights --wait
-  ```
+    - Optiona 2 : Using CloudShell
+  
+      ```shell
+      az provider register --namespace Microsoft.HybridCompute
+      az provider register --namespace Microsoft.GuestConfiguration
+      az provider register --namespace Microsoft.AzureArcData
+      az provider register --namespace Microsoft.HybridConnectivity
+      az provider register --namespace Microsoft.OperationsManagement
+      az provider register --namespace Microsoft.SecurityInsights
+      ```
 
 2. Click the <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Farc_jumpstart_levelup%2Fpsconfeu%2Fazure_arc_servers_jumpstart%2FARM%2Fazuredeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a> button and enter values for the the ARM template parameters to deploy the hands-on environment.
