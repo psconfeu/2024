@@ -20,3 +20,5 @@ After completion of this session, you will be able to:
 ## Prerequisites and Setup Information
 
 All information for participating in this session can be found in [the session repository](https://aka.ms/arc-follow-along).
+
+To save you time, please deploy the hands-on environment before coming to the session (if possible) as it takes ~10-25 minutes to get everything ready for the exercises. Click the <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Farc_jumpstart_levelup%2Fpsconfeu%2Fazure_arc_servers_jumpstart%2FARM%2Fazuredeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a> button and enter values for the the ARM template parameters to deploy the hands-on environment.
