@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="NL">
+
+<head>
+    <title>TEST</title>
+</head>
+
+<body id="top">
+
+    <h1>Test Login</h1>
+    <a href="#" onclick="login()">Click here to log in</a>
+    <br>
+    <br>
+    <a href="#" onclick="logout()">Click here to log out</a>
+    <br>
+    <br>
+    User: <span id="currentaccount">???</span>
+    <br>
+    Role(s): <span id="currenToken">???</span>
+    <br>
+    Token: <span id="Token">???</span>
+    <br>
+    <hr>
+
+    <script src="https://alcdn.msftauth.net/browser/2.22.0/js/msal-browser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //Azure AD AppConfig
+        const msalConfig = {
+            auth: {
+                clientId: 'c32c9725-fb12-4e01-8ef3-cb7606b4c6d6',
+                authority: 'https://login.microsoftonline.com/289178cb-1f7c-4171-b559-4885bd001c74',
+                redirectUri: `${location.origin}`
+            },
+            cache: {
+                cacheLocation: "sessionStorage",
+                storeAuthStateInCookie: false
+            }
+        };
+
+        //Vars
+        const myMSALObj = new msal.PublicClientApplication(msalConfig);
+        var currentAccount = getCurrentAccount();
+
+        // Login Functions
+        async function getUserToken() {
+            var userToken = null;
+            const UserSession = getUserSession();
+            await UserSession.then((session) => {
+                userToken = session.idToken
+            })
+            return userToken;
+        }
+
+        async function getUserRoles() {
+            var userRoles = null;
+            const UserSession = getUserSession();
+            await UserSession.then((session) => {
+                userRoles = session.idTokenClaims.roles
+            })
+            return userRoles;
+        }
+
+        async function getUserSession() {
+            if (currentAccount == null) {
+                await signinUser();
+            }
+
+            // Check if needs refreshing
+            var currentTimeStamp = Date.now() / 1000;
+            if (currentTimeStamp > currentAccount.idTokenClaims.exp) {
+                await signinUser();
+            }
+
+            var silentRequest = {
+                scopes: ["User.Read", "User.readbasic.all"],
+                account: currentAccount,
+                forceRefresh: false
+            };
+
+            return await myMSALObj.acquireTokenSilent(silentRequest).catch(async (error) => {
+                if (error instanceof InteractionRequiredAuthError) {
+                    // fallback to interaction when silent call fails
+                    var request = {
+                        scopes: ["User.Read", "User.readbasic.all"]
+                    };
+
+                    return await myMSALObj.acquireTokenPopup(request).catch(error => {
+                        console.log(error);
+                    });
+                }
+            });
+        }
+
+        async function signinUser() {
+            var request = {
+                scopes: ["User.Read", "User.readbasic.all"]
+            };
+
+            await myMSALObj.loginPopup(request).then(setCurrentAccount).catch(function (error) {
+                console.log(error);
+            });
+        }
+
+        function setCurrentAccount(resp) {
+            currentAccount = myMSALObj.getAccountByUsername(resp.account.username);
+        }
+
+        function getCurrentAccount() {
+            const allaccounts = myMSALObj.getAllAccounts();
+            if (allaccounts.length > 0) {
+                return myMSALObj.getAccountByUsername(allaccounts[0].username);
+            }
+            else {
+                return myMSALObj.getAccountByUsername(null);
+            }
+        }
+
+        //Token Functions
+        function decodeBase64(base64url) {
+            try {
+                //Convert base 64 url to base 64
+                var base64 = base64url.replace('-', '+').replace('_', '/')
+                //atob() is a built in JS function that decodes a base-64 encoded string
+                var utf8 = atob(base64)
+            } catch (err) {
+                utf8 = "Bad String.\nError: " + err.message
+            }
+            return utf8
+        }
+
+        function getJWTpayload(token) {
+            var tokens = token.split(".")
+            if (tokens.length == 3) {
+                return JSON.parse(decodeBase64(tokens[1]))
+            }
+        }
+
+        //Main Functions
+        async function login() {
+            if (currentAccount == null) {
+                await signinUser();
+            }
+            $("#currentaccount").html((getCurrentAccount()).username)
+            $("#currenToken").html(JSON.stringify((getJWTpayload(await getUserToken())).roles))
+            $("#Token").html(await getUserToken())
+        }
+
+        async function logout() {
+            // Extract login hint to use as logout hint
+            const logoutHint = currentAccount.username;
+            await myMSALObj.logoutPopup({ logoutHint: logoutHint });
+            window.location.replace(location.origin);
+        }
+    </script>
+</body>
+
+</html>
