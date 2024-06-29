@@ -1,0 +1,610 @@
+2024-03-27T16:08:28.9254729Z ##[section]Starting: Job
+2024-03-27T16:08:29.2772542Z ##[debug]Agent environment resources - Unable to get disk info, exception: Value cannot be null. (Parameter 'driveName'), Memory: Used 1625.00 MB out of 8191.00 MB, CPU: Usage 69.62%
+2024-03-27T16:08:29.2826811Z ##[debug]Cleaning agent temp folder: D:\a\_work\_temp
+2024-03-27T16:08:29.2865280Z ##[debug]Skipping overwrite %TEMP% environment variable
+2024-03-27T16:08:29.6297308Z ##[section]Starting: Initialize job
+2024-03-27T16:08:29.6299877Z Agent name: 'MDPPool1 1'
+2024-03-27T16:08:29.6300301Z Agent machine name: 'e6b740c9c000000'
+2024-03-27T16:08:29.6300514Z Current agent version: '3.236.1'
+2024-03-27T16:08:29.6334281Z ##[group]Managed DevOps Pool
+2024-03-27T16:08:29.6334552Z SKU: Standard_D2ads_v5
+2024-03-27T16:08:29.6335042Z Image: /subscriptions//Providers/Microsoft.Compute/Locations/westeurope/publishers/microsoftwindowsserver/artifacttypes/vmimage/offers/windowsserver/skus/2019-datacenter/versions/latest
+2024-03-27T16:08:29.6335653Z Image Version: 17763.5576.240304
+2024-03-27T16:08:29.6335830Z Interactive Mode: False
+2024-03-27T16:08:29.6336062Z Request Id: 4dc4c4d7-ffa2-444c-9e2a-ccffad7861bd
+2024-03-27T16:08:29.6336245Z Pool Name: MDPPool1
+2024-03-27T16:08:29.6336384Z Location: westeurope
+2024-03-27T16:08:29.6336541Z Work Folder: D:\a\_work
+2024-03-27T16:08:29.6336738Z Worker Build Version: 27474899
+2024-03-27T16:08:29.6336900Z ##[endgroup]
+2024-03-27T16:08:29.6343615Z Agent running as: 'manageddevops'
+2024-03-27T16:08:29.6381780Z ##[debug]Triggering repository: . repository type: Git
+2024-03-27T16:08:29.6386033Z Prepare build directory.
+2024-03-27T16:08:29.7087158Z ##[debug]Creating build directory: 'D:\a\_work\1'
+2024-03-27T16:08:29.7089896Z ##[debug]Delete existing artifacts directory: 'D:\a\_work\1\a'
+2024-03-27T16:08:29.7092511Z ##[debug]Creating artifacts directory: 'D:\a\_work\1\a'
+2024-03-27T16:08:29.7094777Z ##[debug]Delete existing test results directory: 'D:\a\_work\1\TestResults'
+2024-03-27T16:08:29.7095564Z ##[debug]Creating test results directory: 'D:\a\_work\1\TestResults'
+2024-03-27T16:08:29.7101166Z ##[debug]Creating binaries directory: 'D:\a\_work\1\b'
+2024-03-27T16:08:29.7103408Z ##[debug]Creating source directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:29.7182055Z Set build variables.
+2024-03-27T16:08:29.7219000Z Download all required tasks.
+2024-03-27T16:08:29.7387234Z Downloading task: PowerShell (2.236.2)
+2024-03-27T16:08:34.3525285Z ##[debug]Agent environment resources - Disk: D:\ Available 74764.00 MB out of 76797.00 MB, Memory: Used 1625.00 MB out of 8191.00 MB, CPU: Usage 40.86%
+2024-03-27T16:08:39.4077312Z ##[debug]Agent environment resources - Disk: D:\ Available 74750.00 MB out of 76797.00 MB, Memory: Used 1615.00 MB out of 8191.00 MB, CPU: Usage 24.74%
+2024-03-27T16:08:44.7586329Z ##[debug]Agent environment resources - Disk: D:\ Available 74746.00 MB out of 76797.00 MB, Memory: Used 1597.00 MB out of 8191.00 MB, CPU: Usage 18.55%
+2024-03-27T16:08:49.8176106Z ##[debug]Agent environment resources - Disk: D:\ Available 74744.00 MB out of 76797.00 MB, Memory: Used 1596.00 MB out of 8191.00 MB, CPU: Usage 15.23%
+2024-03-27T16:08:51.8161591Z ##[debug]Task 'PowerShell' has been downloaded into 'D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2'.
+2024-03-27T16:08:51.8614829Z Checking job knob settings.
+2024-03-27T16:08:51.8623381Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2024-03-27T16:08:51.8624733Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2024-03-27T16:08:51.8625656Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2024-03-27T16:08:51.8626005Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2024-03-27T16:08:51.8626245Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2024-03-27T16:08:51.8628184Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2024-03-27T16:08:51.8628355Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2024-03-27T16:08:51.8628612Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2024-03-27T16:08:51.8628779Z    Knob: MountWorkspace = true Source: $(AZP_AGENT_MOUNT_WORKSPACE) 
+2024-03-27T16:08:51.8629028Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2024-03-27T16:08:51.8629118Z Finished checking job knob settings.
+2024-03-27T16:08:51.8931850Z ##[debug]Log plugin 'TestResultLogPlugin' is disabled.
+2024-03-27T16:08:51.8932027Z ##[debug]Log plugin 'TestFilePublisherPlugin' is disabled.
+2024-03-27T16:08:51.8932275Z Start tracking orphan processes.
+2024-03-27T16:08:51.8970556Z ##[section]Finishing: Initialize job
+2024-03-27T16:08:51.9250775Z ##[section]Async Command Start: DetectDockerContainer
+2024-03-27T16:08:51.9250915Z ##[section]Async Command End: DetectDockerContainer
+2024-03-27T16:08:51.9251312Z ##[section]Async Command Start: DetectDockerContainer
+2024-03-27T16:08:51.9251426Z ##[section]Async Command End: DetectDockerContainer
+2024-03-27T16:08:51.9267214Z ##[debug]Evaluating condition for step: 'Checkout @master to s'
+2024-03-27T16:08:51.9309024Z ##[debug]Evaluating: SucceededNode()
+2024-03-27T16:08:51.9314444Z ##[debug]Evaluating SucceededNode:
+2024-03-27T16:08:51.9351056Z ##[debug]=> True
+2024-03-27T16:08:51.9360258Z ##[debug]Result: True
+2024-03-27T16:08:51.9425179Z ##[section]Starting: Checkout @master to s
+2024-03-27T16:08:52.0334901Z ==============================================================================
+2024-03-27T16:08:52.0335191Z Task         : Get sources
+2024-03-27T16:08:52.0335357Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-03-27T16:08:52.0335445Z Version      : 1.0.0
+2024-03-27T16:08:52.0335586Z Author       : Microsoft
+2024-03-27T16:08:52.0335831Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-03-27T16:08:52.0336001Z ==============================================================================
+2024-03-27T16:08:52.4940007Z ##[debug]Processed: ##vso[telemetry.publish area=AzurePipelinesAgent;feature=Checkout]{"RepoType":"Git","HostOS":"Windows"}
+2024-03-27T16:08:52.4953549Z ##[debug]Processed: ##vso[plugininternal.updaterepositorypath alias=self;]D:\a\_work\1\s
+2024-03-27T16:08:52.5061350Z ##[debug]Repository requires to be placed at 'D:\a\_work\1\s', current location is 'D:\a\_work\1\s'
+2024-03-27T16:08:52.5062107Z Syncing repository:  (Git)
+2024-03-27T16:08:52.5068484Z ##[debug]repository url=https://@dev.azure.com///_git/
+2024-03-27T16:08:52.5069589Z ##[debug]targetPath=D:\a\_work\1\s
+2024-03-27T16:08:52.5070226Z ##[debug]sourceBranch=refs/heads/master
+2024-03-27T16:08:52.5071375Z ##[debug]sourceVersion=5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:52.5071948Z ##[debug]clean=True
+2024-03-27T16:08:52.5072468Z ##[debug]checkoutSubmodules=False
+2024-03-27T16:08:52.5072974Z ##[debug]checkoutNestedSubmodules=False
+2024-03-27T16:08:52.5073470Z ##[debug]exposeCred=False
+2024-03-27T16:08:52.5073959Z ##[debug]fetchDepth=1
+2024-03-27T16:08:52.5074473Z ##[debug]fetchTags=True
+2024-03-27T16:08:52.5074977Z ##[debug]gitLfsSupport=False
+2024-03-27T16:08:52.5075468Z ##[debug]acceptUntrustedCerts=False
+2024-03-27T16:08:52.5075964Z ##[debug]schannelSslBackend=False
+2024-03-27T16:08:52.5076499Z ##[debug]Git paths are resolving from internal dependencies
+2024-03-27T16:08:52.5077097Z ##[debug]The useLatestGitVersion property is set to "False" therefore the Git path is "C:\vss-agent\3.236.1\externals\git\cmd\git.exe"
+2024-03-27T16:08:52.5077592Z Prepending Path environment variable with directory containing 'git.exe'.
+2024-03-27T16:08:52.5086342Z ##[debug]Processed: ##vso[task.prependpath]C:\vss-agent\3.236.1\externals\git\mingw64\bin
+2024-03-27T16:08:52.5090199Z ##[debug]Processed: ##vso[task.prependpath]C:\vss-agent\3.236.1\externals\git\cmd
+2024-03-27T16:08:52.5091100Z ##[debug]PATH: 'C:\vss-agent\3.236.1\externals\git\cmd;C:\vss-agent\3.236.1\externals\git\mingw64\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\manageddevops\AppData\Local\Microsoft\WindowsApps'
+2024-03-27T16:08:52.5091790Z ##[debug]Get git version.
+2024-03-27T16:08:52.5092141Z ##[command]git version
+2024-03-27T16:08:52.5092713Z ##[debug]Starting process:
+2024-03-27T16:08:52.5093198Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:52.5093666Z ##[debug]  Arguments: 'version'
+2024-03-27T16:08:52.5094124Z ##[debug]  Working directory: 'D:\a\_work'
+2024-03-27T16:08:52.5094589Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:52.5095121Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:52.5095673Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:52.5096280Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:52.5097965Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:52.5098823Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:52.5099338Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:52.5099800Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:52.5259899Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:52.5343097Z ##[debug]Process started with process id 6024, waiting for process exit.
+2024-03-27T16:08:52.7010795Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:52.7011259Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:52.7038924Z ##[debug]Exited process 6024 with exit code 0
+2024-03-27T16:08:52.7039373Z ##[debug]Finished process 6024 with exit code 0, and elapsed time 00:00:00.2226665.
+2024-03-27T16:08:52.7039669Z git version 2.39.1.windows.1
+2024-03-27T16:08:52.7048988Z ##[debug]Detect git version: 2.39.1.
+2024-03-27T16:08:52.7057219Z ##[debug]Get git-lfs version.
+2024-03-27T16:08:52.7057930Z ##[command]git lfs version
+2024-03-27T16:08:52.7058839Z ##[debug]Starting process:
+2024-03-27T16:08:52.7059202Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:52.7059543Z ##[debug]  Arguments: 'lfs version'
+2024-03-27T16:08:52.7059890Z ##[debug]  Working directory: 'D:\a\_work'
+2024-03-27T16:08:52.7060214Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:52.7060549Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:52.7060875Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:52.7061180Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:52.7061487Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:52.7061802Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:52.7062127Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:52.7062486Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:52.7097059Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:52.7097556Z ##[debug]Process started with process id 5328, waiting for process exit.
+2024-03-27T16:08:53.1981818Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.1982270Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.1982655Z ##[debug]Exited process 5328 with exit code 0
+2024-03-27T16:08:53.1983117Z ##[debug]Finished process 5328 with exit code 0, and elapsed time 00:00:00.4665678.
+2024-03-27T16:08:53.1983503Z git-lfs/3.3.0 (GitHub; windows amd64; go 1.19.3; git 77deabdf)
+2024-03-27T16:08:53.1983849Z ##[debug]Detect git-lfs version: '3.3.0'.
+2024-03-27T16:08:53.1984241Z ##[debug]Set git useragent to: git/2.39.1 (vsts-agent-git/3.236.1).
+2024-03-27T16:08:53.1984758Z ##[debug]Checking if the repo on D:\a\_work\1\s matches the expected repository origin URL. expected Url: https://@dev.azure.com///_git/
+2024-03-27T16:08:53.1985500Z ##[debug]Repository is not found since '.git' directory does not exist under. D:\a\_work\1\s
+2024-03-27T16:08:53.1985906Z ##[debug]Init git repository at: D:\a\_work\1\s.
+2024-03-27T16:08:53.1986128Z ##[command]git init "D:\a\_work\1\s"
+2024-03-27T16:08:53.1986426Z ##[debug]Starting process:
+2024-03-27T16:08:53.1986781Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.1987134Z ##[debug]  Arguments: 'init "D:\a\_work\1\s"'
+2024-03-27T16:08:53.1987482Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.1987817Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.1988248Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.1988613Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.1988960Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.1989272Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.1989583Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.1989888Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.1990906Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.2017932Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.2018302Z ##[debug]Process started with process id 5716, waiting for process exit.
+2024-03-27T16:08:53.2593636Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-03-27T16:08:53.2594046Z Initialized empty Git repository in D:/a/_work/1/s/.git/
+2024-03-27T16:08:53.2594252Z hint: is subject to change. To configure the initial branch name to use in all
+2024-03-27T16:08:53.2594464Z hint: of your new repositories, which will suppress this warning, call:
+2024-03-27T16:08:53.2603291Z hint: 
+2024-03-27T16:08:53.2604421Z hint: 	git config --global init.defaultBranch <name>
+2024-03-27T16:08:53.2604588Z hint: 
+2024-03-27T16:08:53.2604769Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-03-27T16:08:53.2604977Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-03-27T16:08:53.2605157Z hint: 
+2024-03-27T16:08:53.2605274Z hint: 	git branch -m <name>
+2024-03-27T16:08:53.2635255Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.2635652Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.2635983Z ##[debug]Exited process 5716 with exit code 0
+2024-03-27T16:08:53.2636393Z ##[debug]Finished process 5716 with exit code 0, and elapsed time 00:00:00.0670275.
+2024-03-27T16:08:53.2639416Z ##[debug]Add git remote: origin to url: https://@dev.azure.com///_git/ for repository under: D:\a\_work\1\s.
+2024-03-27T16:08:53.2644446Z ##[command]git remote add origin https://@dev.azure.com///_git/
+2024-03-27T16:08:53.2648299Z ##[debug]Starting process:
+2024-03-27T16:08:53.2659142Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.2659612Z ##[debug]  Arguments: 'remote add origin https://@dev.azure.com///_git/'
+2024-03-27T16:08:53.2660007Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.2660311Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.2660630Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.2660967Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.2661292Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.2661598Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.2661911Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.2662218Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.2662536Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.2686364Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.2686892Z ##[debug]Process started with process id 1864, waiting for process exit.
+2024-03-27T16:08:53.3211499Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.3211951Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.3212311Z ##[debug]Exited process 1864 with exit code 0
+2024-03-27T16:08:53.3212832Z ##[debug]Finished process 1864 with exit code 0, and elapsed time 00:00:00.0554861.
+2024-03-27T16:08:53.3243215Z ##[debug]Show the working tree status for repository at D:\a\_work\1\s.
+2024-03-27T16:08:53.3243473Z ##[command]git status
+2024-03-27T16:08:53.3243807Z ##[debug]Starting process:
+2024-03-27T16:08:53.3244169Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.3244527Z ##[debug]  Arguments: 'status'
+2024-03-27T16:08:53.3244833Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.3245158Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.3245521Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.3245875Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.3246194Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.3246652Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.3246999Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.3247321Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.3247660Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.3262146Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.3262606Z ##[debug]Process started with process id 1644, waiting for process exit.
+2024-03-27T16:08:53.9769666Z On branch master
+2024-03-27T16:08:53.9769752Z 
+2024-03-27T16:08:53.9769878Z No commits yet
+2024-03-27T16:08:53.9769930Z 
+2024-03-27T16:08:53.9770083Z nothing to commit (create/copy files and use "git add" to track)
+2024-03-27T16:08:53.9770869Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9771233Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9771529Z ##[debug]Exited process 1644 with exit code 0
+2024-03-27T16:08:53.9771927Z ##[debug]Finished process 1644 with exit code 0, and elapsed time 00:00:00.0716951.
+2024-03-27T16:08:53.9776551Z ##[debug]Processed: ##vso[task.setprogress value=0]Starting fetch...
+2024-03-27T16:08:53.9776973Z ##[debug]Disable git auto garbage collection.
+2024-03-27T16:08:53.9777173Z ##[command]git config gc.auto 0
+2024-03-27T16:08:53.9777412Z ##[debug]Starting process:
+2024-03-27T16:08:53.9777722Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.9778035Z ##[debug]  Arguments: 'config gc.auto 0'
+2024-03-27T16:08:53.9778331Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.9778619Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.9778935Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.9779250Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.9779558Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.9779843Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.9780144Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.9780438Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.9780749Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.9781052Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.9781372Z ##[debug]Process started with process id 1756, waiting for process exit.
+2024-03-27T16:08:53.9781689Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9781986Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9782274Z ##[debug]Exited process 1756 with exit code 0
+2024-03-27T16:08:53.9782632Z ##[debug]Finished process 1756 with exit code 0, and elapsed time 00:00:00.0443825.
+2024-03-27T16:08:53.9783036Z ##[debug]Checking git config http.https://@dev.azure.com///_git/.extraheader exist or not
+2024-03-27T16:08:53.9784210Z ##[command]git config --get-all http.https://@dev.azure.com///_git/.extraheader
+2024-03-27T16:08:53.9784559Z ##[debug]Starting process:
+2024-03-27T16:08:53.9784874Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.9785286Z ##[debug]  Arguments: 'config --get-all http.https://@dev.azure.com///_git/.extraheader'
+2024-03-27T16:08:53.9785675Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.9785974Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.9786285Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.9786603Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.9786908Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.9787195Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.9787506Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.9787798Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.9788227Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.9788532Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.9788838Z ##[debug]Process started with process id 2740, waiting for process exit.
+2024-03-27T16:08:53.9789133Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9789419Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9789714Z ##[debug]Exited process 2740 with exit code 1
+2024-03-27T16:08:53.9790085Z ##[debug]Finished process 2740 with exit code 1, and elapsed time 00:00:00.0439961.
+2024-03-27T16:08:53.9790480Z ##[debug]Checking git config http.extraheader exist or not
+2024-03-27T16:08:53.9790715Z ##[command]git config --get-all http.extraheader
+2024-03-27T16:08:53.9790980Z ##[debug]Starting process:
+2024-03-27T16:08:53.9791311Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.9791695Z ##[debug]  Arguments: 'config --get-all http.extraheader'
+2024-03-27T16:08:53.9792018Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.9792478Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.9792832Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.9793152Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.9793465Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.9793751Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.9794057Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.9794381Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.9794734Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:53.9795037Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:53.9795362Z ##[debug]Process started with process id 3956, waiting for process exit.
+2024-03-27T16:08:53.9795690Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9796002Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:53.9796343Z ##[debug]Exited process 3956 with exit code 1
+2024-03-27T16:08:53.9796744Z ##[debug]Finished process 3956 with exit code 1, and elapsed time 00:00:00.4882253.
+2024-03-27T16:08:53.9797143Z ##[debug]Checking git config .*extraheader exist or not
+2024-03-27T16:08:53.9797355Z ##[command]git config --get-regexp .*extraheader
+2024-03-27T16:08:53.9797628Z ##[debug]Starting process:
+2024-03-27T16:08:53.9797961Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:53.9798335Z ##[debug]  Arguments: 'config --get-regexp .*extraheader'
+2024-03-27T16:08:53.9798655Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:53.9798965Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:53.9799287Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:53.9799747Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:53.9800067Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:53.9800371Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:53.9800693Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:53.9801008Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:53.9801318Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:54.0194627Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:54.0200620Z ##[debug]Process started with process id 3248, waiting for process exit.
+2024-03-27T16:08:54.0309048Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.0336975Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.0342817Z ##[debug]Exited process 3248 with exit code 1
+2024-03-27T16:08:54.0343628Z ##[debug]Finished process 3248 with exit code 1, and elapsed time 00:00:00.0544165.
+2024-03-27T16:08:54.0344176Z ##[debug]Checking git config http.proxy exist or not
+2024-03-27T16:08:54.0344525Z ##[command]git config --get-all http.proxy
+2024-03-27T16:08:54.0344928Z ##[debug]Starting process:
+2024-03-27T16:08:54.0346143Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:54.0346772Z ##[debug]  Arguments: 'config --get-all http.proxy'
+2024-03-27T16:08:54.0347219Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:54.0347653Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:54.0348108Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:54.0348572Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:54.0349036Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:54.0349480Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:54.0349943Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:54.0350395Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:54.0350824Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:54.0362166Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:54.0363093Z ##[debug]Process started with process id 5208, waiting for process exit.
+2024-03-27T16:08:54.0736782Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.0745568Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.0754217Z ##[debug]Exited process 5208 with exit code 1
+2024-03-27T16:08:54.0755067Z ##[debug]Finished process 5208 with exit code 1, and elapsed time 00:00:00.0429459.
+2024-03-27T16:08:54.0757355Z ##[debug]Set git config http.version HTTP/1.1
+2024-03-27T16:08:54.0757856Z ##[command]git config http.version HTTP/1.1
+2024-03-27T16:08:54.0758343Z ##[debug]Starting process:
+2024-03-27T16:08:54.0758904Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:54.0759385Z ##[debug]  Arguments: 'config http.version HTTP/1.1'
+2024-03-27T16:08:54.0759821Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:54.0760280Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:54.0760823Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:54.0761347Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:54.0761843Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:54.0768733Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:54.0769311Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:54.0769737Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:54.0770172Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:54.0802500Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:54.0803344Z ##[debug]Process started with process id 4248, waiting for process exit.
+2024-03-27T16:08:54.1178575Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.1186749Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.1195707Z ##[debug]Exited process 4248 with exit code 0
+2024-03-27T16:08:54.1196757Z ##[debug]Finished process 4248 with exit code 0, and elapsed time 00:00:00.0430009.
+2024-03-27T16:08:54.1197708Z ##[debug]Set environment variable env_var_http.extraheader
+2024-03-27T16:08:54.1198234Z ##[debug]fetchDepth : 1
+2024-03-27T16:08:54.1198805Z ##[debug]fetchByCommit : True
+2024-03-27T16:08:54.1199369Z ##[debug]sourceVersion : 5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:54.1199929Z ##[debug]fetchTags : True
+2024-03-27T16:08:54.1290465Z ##[debug]Fetch git repository at: D:\a\_work\1\s remote: origin.
+2024-03-27T16:08:54.1297926Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349:refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:54.1298757Z ##[debug]Starting process:
+2024-03-27T16:08:54.1299315Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:54.1300384Z ##[debug]  Arguments: '--config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349:refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349'
+2024-03-27T16:08:54.1301130Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:54.1301617Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:54.1302128Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:54.1302621Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:54.1303097Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:54.1303561Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:54.1304034Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:54.1304488Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:54.1306449Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:54.1344767Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:54.1345847Z ##[debug]Process started with process id 3540, waiting for process exit.
+2024-03-27T16:08:54.4399802Z remote: Azure Repos        
+2024-03-27T16:08:54.4640863Z remote: 
+2024-03-27T16:08:54.4656850Z remote: Found 92 objects to send. (12 ms)        
+2024-03-27T16:08:54.7196016Z From https://dev.azure.com///_git/
+2024-03-27T16:08:54.7196916Z  * [new ref]         5088af32a8b730e03387a52b7a75be34c3b3b349 -> origin/5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:54.7349754Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.7357275Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:54.7367149Z ##[debug]Exited process 3540 with exit code 0
+2024-03-27T16:08:54.7367922Z ##[debug]Finished process 3540 with exit code 0, and elapsed time 00:00:00.6060420.
+2024-03-27T16:08:54.7728468Z ##[debug]Processed: ##vso[telemetry.publish area=AzurePipelinesAgent;feature=GitFetch]{"ElapsedTimeMilliseconds":"607","RefSpec":"+5088af32a8b730e03387a52b7a75be34c3b3b349:refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349","RemoteName":"origin","FetchDepth":"1","ExitCode":"0","Options":"--force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349:refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349"}
+2024-03-27T16:08:54.7729655Z ##[debug]Fetch git repository at: D:\a\_work\1\s remote: origin.
+2024-03-27T16:08:54.7730072Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:54.7730476Z ##[debug]Starting process:
+2024-03-27T16:08:54.7730817Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:54.7731334Z ##[debug]  Arguments: '--config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349'
+2024-03-27T16:08:54.7732032Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:54.7732348Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:54.7732708Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:54.7733038Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:54.7733369Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:54.7733686Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:54.7734007Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:54.7734300Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:54.7734651Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:54.7734982Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:54.7735331Z ##[debug]Process started with process id 2856, waiting for process exit.
+2024-03-27T16:08:54.8876753Z ##[debug]Agent environment resources - Disk: D:\ Available 74751.00 MB out of 76797.00 MB, Memory: Used 1656.00 MB out of 8191.00 MB, CPU: Usage 16.36%
+2024-03-27T16:08:55.1444266Z remote: Azure Repos        
+2024-03-27T16:08:55.1455347Z remote: 
+2024-03-27T16:08:55.1456073Z remote: Found 0 objects to send. (0 ms)        
+2024-03-27T16:08:55.1881623Z From https://dev.azure.com///_git/
+2024-03-27T16:08:55.1883684Z  * branch            5088af32a8b730e03387a52b7a75be34c3b3b349 -> FETCH_HEAD
+2024-03-27T16:08:55.2019158Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:55.2026875Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:55.2035339Z ##[debug]Exited process 2856 with exit code 0
+2024-03-27T16:08:55.2036187Z ##[debug]Finished process 2856 with exit code 0, and elapsed time 00:00:00.4657653.
+2024-03-27T16:08:55.2383723Z ##[debug]Processed: ##vso[telemetry.publish area=AzurePipelinesAgent;feature=GitFetch]{"ElapsedTimeMilliseconds":"466","RefSpec":"+5088af32a8b730e03387a52b7a75be34c3b3b349","RemoteName":"origin","FetchDepth":"1","ExitCode":"0","Options":"--force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1 +5088af32a8b730e03387a52b7a75be34c3b3b349"}
+2024-03-27T16:08:55.2385577Z ##[debug]Processed: ##vso[task.setprogress value=80]Starting checkout...
+2024-03-27T16:08:55.2386018Z ##[debug]refFetchedByCommit : refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:55.2386392Z ##[debug]Checkout refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349.
+2024-03-27T16:08:55.2386691Z ##[command]git checkout --progress --force refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:55.2387015Z ##[debug]Starting process:
+2024-03-27T16:08:55.2387336Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:55.2387700Z ##[debug]  Arguments: 'checkout --progress --force refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349'
+2024-03-27T16:08:55.2388068Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:55.2388362Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:55.2388686Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:55.2388999Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:55.2389285Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:55.2389579Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:55.2389879Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:55.2390172Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:55.2390477Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:55.2390793Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:55.2391117Z ##[debug]Process started with process id 5104, waiting for process exit.
+2024-03-27T16:08:55.5662369Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:55.5840077Z Note: switching to 'refs/remotes/origin/5088af32a8b730e03387a52b7a75be34c3b3b349'.
+2024-03-27T16:08:55.5899528Z 
+2024-03-27T16:08:55.5912163Z You are in 'detached HEAD' state. You can look around, make experimental
+2024-03-27T16:08:55.5913402Z ##[debug]Exited process 5104 with exit code 0
+2024-03-27T16:08:55.5920599Z changes and commit them, and you can discard any commits you make in this
+2024-03-27T16:08:55.5921723Z state without impacting any branches by switching back to a branch.
+2024-03-27T16:08:55.5922284Z 
+2024-03-27T16:08:55.5923131Z If you want to create a new branch to retain commits you create, you may
+2024-03-27T16:08:55.5924004Z do so (now or later) by using -c with the switch command. Example:
+2024-03-27T16:08:55.5924458Z 
+2024-03-27T16:08:55.5925032Z   git switch -c <new-branch-name>
+2024-03-27T16:08:55.5925411Z 
+2024-03-27T16:08:55.5925980Z Or undo this operation with:
+2024-03-27T16:08:55.5926441Z 
+2024-03-27T16:08:55.5927032Z   git switch -
+2024-03-27T16:08:55.5927410Z 
+2024-03-27T16:08:55.5928084Z Turn off this advice by setting config variable advice.detachedHead to false
+2024-03-27T16:08:55.5935591Z 
+2024-03-27T16:08:55.5936469Z HEAD is now at 5088af3 Update azure-pipelines-4.yml for Azure Pipelines
+2024-03-27T16:08:55.5964527Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:55.5994882Z ##[debug]Finished process 5104 with exit code 0, and elapsed time 00:00:00.3896817.
+2024-03-27T16:08:55.6060677Z ##[debug]Processed: ##vso[task.settaskvariable variable=repository;issecret=False;]self
+2024-03-27T16:08:55.6085869Z ##[debug]Processed: ##vso[task.settaskvariable variable=repoUrlWithCred;issecret=True;]***
+2024-03-27T16:08:55.6271261Z ##[debug]Show the working tree status for repository at D:\a\_work\1\s.
+2024-03-27T16:08:55.6893717Z ##[command]git status
+2024-03-27T16:08:55.7468923Z ##[debug]Starting process:
+2024-03-27T16:08:55.8105557Z ##[debug]  File name: 'C:\vss-agent\3.236.1\externals\git\cmd\git.exe'
+2024-03-27T16:08:55.8402711Z ##[debug]  Arguments: 'status'
+2024-03-27T16:08:55.8816308Z ##[debug]  Working directory: 'D:\a\_work\1\s'
+2024-03-27T16:08:55.9102575Z ##[debug]  Require exit code zero: 'False'
+2024-03-27T16:08:55.9223380Z ##[debug]  Encoding web name: utf-8 ; code page: '65001'
+2024-03-27T16:08:55.9332247Z ##[debug]  Force kill process on cancellation: 'False'
+2024-03-27T16:08:55.9387497Z ##[debug]  Redirected STDIN: 'False'
+2024-03-27T16:08:55.9412860Z ##[debug]  Persist current code page: 'False'
+2024-03-27T16:08:55.9444983Z ##[debug]  Keep redirected STDIN open: 'False'
+2024-03-27T16:08:55.9496845Z ##[debug]  High priority process: 'False'
+2024-03-27T16:08:55.9518543Z ##[debug]  ContinueAfterCancelProcessTreeKillAttempt: 'False'
+2024-03-27T16:08:55.9542646Z ##[debug]OOM score adjustment is Linux-only.
+2024-03-27T16:08:55.9595062Z ##[debug]Process started with process id 392, waiting for process exit.
+2024-03-27T16:08:56.3621165Z HEAD detached at origin/5088af32a8b730e03387a52b7a75be34c3b3b349
+2024-03-27T16:08:56.3622698Z nothing to commit, working tree clean
+2024-03-27T16:08:56.3650738Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:56.3660890Z ##[debug]STDOUT/STDERR stream read finished.
+2024-03-27T16:08:56.3694817Z ##[debug]Exited process 392 with exit code 0
+2024-03-27T16:08:56.3704050Z ##[debug]Finished process 392 with exit code 0, and elapsed time 00:00:00.7724040.
+2024-03-27T16:08:56.3822634Z ##[section]Finishing: Checkout @master to s
+2024-03-27T16:08:56.3987480Z ##[debug]Evaluating condition for step: 'install az'
+2024-03-27T16:08:56.3988778Z ##[debug]Evaluating: SucceededNode()
+2024-03-27T16:08:56.3988933Z ##[debug]Evaluating SucceededNode:
+2024-03-27T16:08:56.3989290Z ##[debug]=> True
+2024-03-27T16:08:56.3989477Z ##[debug]Result: True
+2024-03-27T16:08:56.3989662Z ##[section]Starting: install az
+2024-03-27T16:08:56.4065265Z ==============================================================================
+2024-03-27T16:08:56.4065347Z Task         : PowerShell
+2024-03-27T16:08:56.4065397Z Description  : Run a PowerShell script on Linux, macOS, or Windows
+2024-03-27T16:08:56.4065571Z Version      : 2.236.2
+2024-03-27T16:08:56.4065623Z Author       : Microsoft Corporation
+2024-03-27T16:08:56.4065680Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/powershell
+2024-03-27T16:08:56.4065752Z ==============================================================================
+2024-03-27T16:08:58.4725211Z ##[debug]VstsTaskSdk 0.20.0 commit 4ee6f874499c3b5cfc599871f91cb52b3a3fcd23
+2024-03-27T16:08:58.6239360Z ##[debug]Loading module from path 'D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\ps_modules\Sanitizer\Sanitizer.psm1'.
+2024-03-27T16:08:58.6436703Z ##[debug]$OVERRIDING $global:DebugPreference from 'Continue' to 'SilentlyContinue'.
+2024-03-27T16:08:58.6536351Z ##[debug]Loading resource strings from: D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\ps_modules\Sanitizer/module.json
+2024-03-27T16:08:58.6538844Z ##[debug]Loaded 1 strings.
+2024-03-27T16:08:58.6571178Z ##[debug]SYSTEM_CULTURE: 'en-US'
+2024-03-27T16:08:58.6588142Z ##[debug]Loading resource strings from: D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\ps_modules\Sanitizer\Strings\resources.resjson\en-US\resources.resjson
+2024-03-27T16:08:58.6628936Z ##[debug]Loaded 1 strings.
+2024-03-27T16:08:58.8891469Z ##[debug]Feature flag AZP_75787_ENABLE_NEW_LOGIC state: False
+2024-03-27T16:08:58.8892446Z ##[debug]Feature flag AZP_75787_ENABLE_NEW_LOGIC_LOG state: False
+2024-03-27T16:08:58.8918311Z ##[debug]Feature flag AZP_75787_ENABLE_COLLECT state: True
+2024-03-27T16:08:58.8932149Z ##[debug]Exporting function 'Get-SanitizerFeatureFlags'.
+2024-03-27T16:08:58.8945748Z ##[debug]Exporting function 'Get-SanitizerCallStatus'.
+2024-03-27T16:08:58.8958961Z ##[debug]Exporting function 'Get-SanitizerActivateStatus'.
+2024-03-27T16:08:58.8974860Z ##[debug]Exporting function 'Protect-ScriptArguments'.
+2024-03-27T16:08:58.8992293Z ##[debug]Importing function 'Get-SanitizerActivateStatus'.
+2024-03-27T16:08:58.9005123Z ##[debug]Importing function 'Get-SanitizerCallStatus'.
+2024-03-27T16:08:58.9017840Z ##[debug]Importing function 'Get-SanitizerFeatureFlags'.
+2024-03-27T16:08:58.9030622Z ##[debug]Importing function 'Protect-ScriptArguments'.
+2024-03-27T16:08:58.9252819Z ##[debug]Entering D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\powershell.ps1.
+2024-03-27T16:08:58.9321314Z ##[debug]Loading resource strings from: D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\task.json
+2024-03-27T16:08:58.9680375Z ##[debug]Loaded 14 strings.
+2024-03-27T16:08:58.9702991Z ##[debug]SYSTEM_CULTURE: 'en-US'
+2024-03-27T16:08:58.9719816Z ##[debug]Loading resource strings from: D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\Strings\resources.resjson\en-US\resources.resjson
+2024-03-27T16:08:58.9956742Z ##[debug]Loaded 14 strings.
+2024-03-27T16:08:59.0167822Z ##[debug]INPUT_ERRORACTIONPREFERENCE: 'stop'
+2024-03-27T16:08:59.0215480Z ##[debug]INPUT_WARNINGPREFERENCE: 'default'
+2024-03-27T16:08:59.0233988Z ##[debug]INPUT_INFORMATIONPREFERENCE: 'default'
+2024-03-27T16:08:59.0252368Z ##[debug]INPUT_VERBOSEPREFERENCE: 'default'
+2024-03-27T16:08:59.0270913Z ##[debug]INPUT_DEBUGPREFERENCE: 'default'
+2024-03-27T16:08:59.0293367Z ##[debug]INPUT_PROGRESSPREFERENCE: 'silentlyContinue'
+2024-03-27T16:08:59.0312535Z ##[debug]INPUT_SHOWWARNINGS: 'false'
+2024-03-27T16:08:59.1637298Z ##[debug] Converted to bool: False
+2024-03-27T16:08:59.1655804Z ##[debug]INPUT_FAILONSTDERR: 'false'
+2024-03-27T16:08:59.1680429Z ##[debug] Converted to bool: False
+2024-03-27T16:08:59.1698111Z ##[debug]INPUT_IGNORELASTEXITCODE: 'false'
+2024-03-27T16:08:59.1716911Z ##[debug] Converted to bool: False
+2024-03-27T16:08:59.1725833Z ##[debug]INPUT_PWSH: 'false'
+2024-03-27T16:08:59.1761723Z ##[debug] Converted to bool: False
+2024-03-27T16:08:59.1782063Z ##[debug]INPUT_WORKINGDIRECTORY: 'D:\a\_work\1\s'
+2024-03-27T16:08:59.1876637Z ##[debug]Asserting container path exists: 'D:\a\_work\1\s'
+2024-03-27T16:08:59.1895974Z ##[debug]INPUT_TARGETTYPE: 'inline'
+2024-03-27T16:08:59.1920634Z ##[debug]INPUT_SCRIPT: 'Install-Module az -Force -Scope CurrentUser'
+2024-03-27T16:08:59.1938098Z ##[debug]INPUT_RUNSCRIPTINSEPARATESCOPE: 'false'
+2024-03-27T16:08:59.1950198Z ##[debug] Converted to bool: False
+2024-03-27T16:08:59.1980363Z Generating script.
+2024-03-27T16:08:59.2110743Z ##[debug]AGENT_VERSION: '3.236.1'
+2024-03-27T16:08:59.2173280Z ##[debug]AGENT_TEMPDIRECTORY: 'D:\a\_work\_temp'
+2024-03-27T16:08:59.2187535Z ##[debug]Asserting container path exists: 'D:\a\_work\_temp'
+2024-03-27T16:08:59.2439778Z ##[debug]Asserting leaf path exists: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+2024-03-27T16:08:59.2447688Z ========================== Starting Command Output ===========================
+2024-03-27T16:08:59.2580419Z ##[debug]Entering Invoke-VstsTool.
+2024-03-27T16:08:59.2653917Z ##[debug] Arguments: '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'D:\a\_work\_temp\dd879994-5717-4c27-a986-a198641eeeb9.ps1'"'
+2024-03-27T16:08:59.2666708Z ##[debug] FileName: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+2024-03-27T16:08:59.2679131Z ##[debug] WorkingDirectory: 'D:\a\_work\1\s'
+2024-03-27T16:08:59.2718977Z ##[command]"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'D:\a\_work\_temp\dd879994-5717-4c27-a986-a198641eeeb9.ps1'"
+2024-03-27T16:08:59.9485619Z ##[debug]Agent environment resources - Disk: D:\ Available 74750.00 MB out of 76797.00 MB, Memory: Used 1770.00 MB out of 8191.00 MB, CPU: Usage 14.61%
+2024-03-27T16:09:04.9845384Z ##[debug]Agent environment resources - Disk: D:\ Available 74750.00 MB out of 76797.00 MB, Memory: Used 1804.00 MB out of 8191.00 MB, CPU: Usage 12.68%
+2024-03-27T16:09:10.0470645Z ##[debug]Agent environment resources - Disk: D:\ Available 74750.00 MB out of 76797.00 MB, Memory: Used 1797.00 MB out of 8191.00 MB, CPU: Usage 11.17%
+2024-03-27T16:09:12.8917164Z Install-NuGetClientBinaries : Exception calling "ShouldContinue" with "2" argument(s): "Windows PowerShell is in 
+2024-03-27T16:09:12.8917518Z NonInteractive mode. Read and Prompt functionality is not available."
+2024-03-27T16:09:12.8917802Z At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:1762 char:9
+2024-03-27T16:09:12.8918112Z +         Install-NuGetClientBinaries -CallerPSCmdlet $PSCmdlet -Proxy  ...
+2024-03-27T16:09:12.8918321Z +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2024-03-27T16:09:12.8918598Z     + CategoryInfo          : NotSpecified: (:) [Install-NuGetClientBinaries], MethodInvocationException
+2024-03-27T16:09:12.8918890Z     + FullyQualifiedErrorId : PSInvalidOperationException,Install-NuGetClientBinaries
+2024-03-27T16:09:12.8919098Z  
+2024-03-27T16:09:12.9170940Z ##[debug]Exit code: 1
+2024-03-27T16:09:12.9204684Z ##[debug]Leaving Invoke-VstsTool.
+2024-03-27T16:09:12.9460408Z ##[error]PowerShell exited with code '1'.
+2024-03-27T16:09:12.9467708Z ##[debug]Processed: ##vso[task.logissue source=TaskInternal;type=error]PowerShell exited with code '1'.
+2024-03-27T16:09:12.9514729Z ##[debug]Processed: ##vso[task.complete result=Failed]Error detected
+2024-03-27T16:09:12.9526826Z ##[debug]Leaving D:\a\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.236.2\powershell.ps1.
+2024-03-27T16:09:12.9756436Z ##[section]Finishing: install az
+2024-03-27T16:09:12.9888053Z ##[debug]Evaluating condition for step: 'Set variables'
+2024-03-27T16:09:12.9888742Z ##[debug]Evaluating: SucceededNode()
+2024-03-27T16:09:12.9888900Z ##[debug]Evaluating SucceededNode:
+2024-03-27T16:09:12.9889181Z ##[debug]=> False
+2024-03-27T16:09:12.9889358Z ##[debug]Result: False
+2024-03-27T16:09:12.9889572Z Skipping step due to condition evaluation.
+Evaluating: SucceededNode()
+Result: False
+
+2024-03-27T16:09:12.9962907Z ##[debug]Evaluating condition for step: 'Create or get resource group'
+2024-03-27T16:09:12.9963445Z ##[debug]Evaluating: SucceededNode()
+2024-03-27T16:09:12.9963574Z ##[debug]Evaluating SucceededNode:
+2024-03-27T16:09:12.9963797Z ##[debug]=> False
+2024-03-27T16:09:12.9963959Z ##[debug]Result: False
+2024-03-27T16:09:12.9964144Z Skipping step due to condition evaluation.
+Evaluating: SucceededNode()
+Result: False
+
+2024-03-27T16:09:13.0033562Z ##[debug]Evaluating condition for step: 'Deploy bicep'
+2024-03-27T16:09:13.0034055Z ##[debug]Evaluating: SucceededNode()
+2024-03-27T16:09:13.0034188Z ##[debug]Evaluating SucceededNode:
+2024-03-27T16:09:13.0034426Z ##[debug]=> False
+2024-03-27T16:09:13.0034596Z ##[debug]Result: False
+2024-03-27T16:09:13.0035170Z Skipping step due to condition evaluation.
+Evaluating: SucceededNode()
+Result: False
+
+2024-03-27T16:09:13.0103205Z ##[debug]Evaluating condition for step: 'Checkout @master to s'
+2024-03-27T16:09:13.0103862Z ##[debug]Evaluating: AlwaysNode()
+2024-03-27T16:09:13.0103988Z ##[debug]Evaluating AlwaysNode:
+2024-03-27T16:09:13.0105062Z ##[debug]=> True
+2024-03-27T16:09:13.0105292Z ##[debug]Result: True
+2024-03-27T16:09:13.0105489Z ##[section]Starting: Checkout @master to s
+2024-03-27T16:09:13.0176110Z ==============================================================================
+2024-03-27T16:09:13.0176212Z Task         : Get sources
+2024-03-27T16:09:13.0176259Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-03-27T16:09:13.0176331Z Version      : 1.0.0
+2024-03-27T16:09:13.0176368Z Author       : Microsoft
+2024-03-27T16:09:13.0176412Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-03-27T16:09:13.0176508Z ==============================================================================
+2024-03-27T16:09:13.2818151Z Cleaning any cached credential from repository:  (Git)
+2024-03-27T16:09:13.2836933Z ##[debug]Repository url=https://@dev.azure.com///_git/
+2024-03-27T16:09:13.2837812Z ##[debug]targetPath=D:\a\_work\1\s
+2024-03-27T16:09:13.2909780Z ##[section]Finishing: Checkout @master to s
+2024-03-27T16:09:13.3108829Z ##[section]Starting: Finalize Job
+2024-03-27T16:09:13.3136514Z Cleaning up task key
+2024-03-27T16:09:13.3137309Z Start cleaning up orphan processes.
+2024-03-27T16:09:13.3149144Z ##[section]Finishing: Finalize Job
+2024-03-27T16:09:13.3338374Z ##[debug]Starting diagnostic file upload.
+2024-03-27T16:09:13.3338491Z ##[debug]Setting up diagnostic log folders.
+2024-03-27T16:09:13.3340876Z ##[debug]Creating diagnostic log files folder.
+2024-03-27T16:09:13.3341950Z ##[debug]Creating diagnostic log environment file.
+2024-03-27T16:09:14.1101148Z ##[debug]Creating capabilities file.
+2024-03-27T16:09:14.1181464Z ##[debug]Copying 1 worker diag logs from C:\vss-agent\3.236.1\_diag.
+2024-03-27T16:09:14.1481646Z ##[debug]Copying 1 agent diag logs from C:\vss-agent\3.236.1\_diag.
+2024-03-27T16:09:14.1567276Z ##[debug]The platform is not based on Debian - skipping debsums check.
+2024-03-27T16:09:14.1567489Z ##[debug]Starting dumping Agent Azure VM extension logs.
+2024-03-27T16:09:14.1573935Z ##[debug](directory "C:\WindowsAzure\Logs\Plugins\Microsoft.VisualStudio.Services.TeamServicesAgent" not found)
+2024-03-27T16:09:14.1574050Z ##[debug]Agent Azure VM extension logs not found. Skipping.
+2024-03-27T16:09:14.1574126Z ##[debug]Zipping diagnostic files.
+2024-03-27T16:09:14.1964364Z ##[debug]Uploading diagnostic metadata file.
+2024-03-27T16:09:14.2056376Z ##[debug]Diagnostic file upload complete.
+2024-03-27T16:09:14.2103723Z ##[section]Finishing: Job
