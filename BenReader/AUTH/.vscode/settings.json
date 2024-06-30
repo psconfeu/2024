@@ -1,0 +1,6 @@
+{
+    "azureFunctions.deploySubpath": "AzFunctions",
+    "azureFunctions.projectLanguage": "PowerShell",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen"
+}
