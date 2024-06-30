@@ -1,0 +1,25 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'REPLACEME!'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      $response = az account get-access-token --resource https://graph.microsoft.com --query accessToken -o tsv
+      $authHeader = @{ Authorization = "Bearer $response" }
+      $restParams = @{
+        Method      = 'Get'
+        Uri         = 'https://graph.microsoft.com/beta/devices'
+        Headers     = $authHeader
+        ContentType = 'application/json'
+      }
+      $restCall = Invoke-RestMethod @restParams
+      Write-Output "Devices Found: $($restCall.value.count)"
+      $resp = $restCall.value | ConvertTo-Json -Depth 100
+      Write-Output $resp
+    addSpnToEnvironment: true
