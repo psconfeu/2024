@@ -1,0 +1,11 @@
+$x = Get-ChildItem
+
+
+
+
+
+
+
+
+
+							$x
