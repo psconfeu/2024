@@ -1,0 +1,10 @@
+2024-04-26T20:30:07:1656000Z
+2024-04-26T16:08:28.9254729Z ## Starting fake log
+2024-04-26T16:08:28.9254729Z ## Lets make PSConfEU a bit more metal by logging Morbid Angel info. 
+2024-04-26T16:08:28.9254729Z ## I think this may be a good hit
+2024-04-26T16:08:28.9254729Z ## Hey, there's no log message in this line?
+2024-04-26T16:08:28.9254729Z ## so we need something with a backtick s pattern I believe?
+2024-04-26T16:08:28.9254729Z ## David Vincent. What a legend. When it comes to singing he`s
+2024-04-26T16:08:28.9254729Z ## one of the greatest.
+2024-04-26T16:08:28.9254729Z ## lets add some emptiness here
+2024-04-26T16:08:28.9254729Z ## Morbid Angel has a song called God of emptiness. Absolutely fantastic.
