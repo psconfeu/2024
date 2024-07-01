@@ -1,0 +1,16 @@
+mode: Mainline
+branches:
+  main:
+    increment: Patch
+    tag:
+    regex: ^master$|^main$ # Allow feature branch increments to affect main branch version
+  feature:
+    #regex: features?[/-]
+    regex: ^(?!master$|main$).*$
+    increment: Patch
+    tag: beta
+  pull-request:
+    tag: preview
+    increment: Inherit
+    tag-number-pattern: ''
+
