@@ -1,0 +1,25 @@
+mode: Mainline
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+no-bump-message: '\+semver:\s?(none|skip)'
+branches:
+
+  main:
+    tag:
+    increment: Patch
+    regex: ^master$|^main$
+    is-mainline: true
+  hotfix:
+    tag: alpha
+    increment: Patch
+    regex: ^hotfix(es)?[/-]|^patch?[/-]
+  feature:
+    tag: alpha
+    increment: Minor
+    regex: ^features?[/-]
+  pull-request:
+    tag: preview
+    increment: Inherit
+    source-branches: [ 'feature', 'hotfix' ]
+
