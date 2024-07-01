@@ -1,0 +1,5 @@
+# Ensure binary files are treated as binary
+*.pptx binary
+*.pdf  binary
+*.png  binary
+*.zip  binary
