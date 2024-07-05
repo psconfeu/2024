@@ -1,0 +1,26 @@
+[
+    {
+        "Age_Group":  "\u003c= 22",
+        "Age_Count":  "100",
+        "Competitor":  "0.3",
+        "Substitute":  "0.5"
+    },
+    {
+        "Age_Group":  "22-40",
+        "Age_Count":  "150",
+        "Competitor":  "0.5",
+        "Substitute":  "0.3"
+    },
+    {
+        "Age_Group":  "40-60",
+        "Age_Count":  "200",
+        "Competitor":  "0.3",
+        "Substitute":  "0.65"
+    },
+    {
+        "Age_Group":  "\u003e=60",
+        "Age_Count":  "300",
+        "Competitor":  "0.1",
+        "Substitute":  "0.8"
+    }
+]
