@@ -24,6 +24,9 @@
     Invoke-PasswordSpraying -Userlist "C:\temp\userlist.txt" -PWlist "C:\temp\passwordlist.txt"
     Invokes the password spraying...
 
+.NOTES
+    Author: Miriam Wiesner, @miriamxyra
+
 #>
 
 [cmdletbinding()]

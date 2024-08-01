@@ -245,7 +245,6 @@ function Add-CredentialToApp {
 
 #region 01 PASSWORD SPRAYING
 
-cd C:\Users\atevet01superadmin\Documents\Miriam_do_not_delete\PSConfDemo\
 $PossiblePasswords = ./Invoke-PasswordSpraying.ps1 -Userlist ./Userlist.txt -Passwordlist .\passwords.txt -TimeoutInSeconds 30 -Verbose
 
 $PossiblePasswords
